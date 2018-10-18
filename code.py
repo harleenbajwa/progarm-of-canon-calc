@@ -73,8 +73,8 @@ def scenario_three():
 
 # 2 inputs 2 outputs
 def speed_vectors(speed, angle):
-    hor_speed = speed * cos(radians(angle))
-    ver_speed = speed * sin(radians(angle))
+    hor_speed = speed * math.cos(math.radians(angle))
+    ver_speed = speed * math.sin(math.radians(angle))
     return hor_speed, ver_speed
 
 operator = intro()
