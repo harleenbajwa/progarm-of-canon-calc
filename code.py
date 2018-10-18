@@ -40,7 +40,11 @@ def get_scenario():
     except ValueError:
         print("Please enter a number")
         get_scenario()
-
+def test_int(x):
+    if int(x) == x:
+        return int(x)
+    else:
+        return round(x, 2)
 # 2 inputs, 1 output
 def scenario_one():
     try:
@@ -49,6 +53,8 @@ def scenario_one():
         time = math.pow(((2 * height) / gravity)),2)
         hor_speed, ver_speed = speed_vectors(speed, 0) ## because you do not need vertical 
         distance = hor_speed * time
+        time = test_int(time)
+        distance = test_int(distance)
         print("It takes " + str(time) +"s for the cannonball to fall to the waterline.")
         print("The distance between the cannonball and the boat is " + str(distance) + "m.")
     except ValueError:
@@ -63,8 +69,10 @@ def scenario_two():
         hor_speed, ver_speed = speed_vectors(speed, angle)
         time = 2 * ver_speed / gravity ## because it's only halfway to the peak
         distance = hor_speed * time
-        print("Time in the air: " + str(time))
-        print("Horizontal distance traveled: " + str(distance))
+        time = test_int(time)
+        distance = test_int(distance)
+        print("The cannonball was in the air for " + str(time)"s.")
+        print("Horizontal distance traveled: " + str(distance)"m")
     except:
         print("Please enter a number.")
         scenario_two()
@@ -79,12 +87,10 @@ def scenario_three():
         height = (math.pow((ver_speed), 2)/ gravity
         time_peak = (math.pow(height, 0.5))/ gravity
         distance = hor_speed * time
-        print(" Distance travel by the ball " + str(distance) + "m.")
+        distance = test_int(distance)
+        print("Distance travel by the ball " + str(distance) + "m.")
     except:
         print("Please enter a number.")
-        
-        
-        
 
 # 2 inputs, 2 outputs
 def speed_vectors(speed, angle):
