@@ -50,7 +50,7 @@ def scenario_one():
     try:
         speed = float(input("What is the speed of the cannonball (m/s)?"))
         height = float(input("What is the height of the cannon above the water (m)?"))
-        time = math.pow(((2 * height) / gravity)),2)
+        time = math.pow(((2 * height) / gravity),2)
         hor_speed, ver_speed = speed_vectors(speed, 0) ## because you do not need vertical 
         distance = hor_speed * time
         time = test_int(time)
@@ -71,8 +71,8 @@ def scenario_two():
         distance = hor_speed * time
         time = test_int(time)
         distance = test_int(distance)
-        print("The cannonball was in the air for " + str(time)"s.")
-        print("Horizontal distance traveled: " + str(distance)"m")
+        print("The cannonball was in the air for " + str(time) + "s.")
+        print("Horizontal distance traveled: " + str(distance) + "m")
     except:
         print("Please enter a number.")
         scenario_two()
@@ -84,7 +84,7 @@ def scenario_three():
         hor_speed, ver_speed = speed_vectors(speed, angle)
         time = ver_speed / gravity 
         max_height = math.pow((ver_speed), 2)/ (2* gravity)
-        height = (math.pow((ver_speed), 2)/ gravity
+        height = math.pow((ver_speed), 2)/ gravity
         time_peak = (math.pow(height, 0.5))/ gravity
         distance = hor_speed * time
         distance = test_int(distance)
