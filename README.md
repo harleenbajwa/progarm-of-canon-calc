@@ -1,1 +1,0 @@
-# progarm-of-canon-calc
